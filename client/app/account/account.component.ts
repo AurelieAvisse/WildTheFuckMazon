@@ -36,4 +36,9 @@ export class AccountComponent implements OnInit {
     );
   }
 
+addMoney(){
+  this.user.money +=1;
+  this.userService.editUser(this.user).subscribe();
+}
+
 }

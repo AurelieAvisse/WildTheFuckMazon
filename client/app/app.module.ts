@@ -4,6 +4,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
+import { ProductService } from './services/product.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
@@ -17,6 +18,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { ProductsComponent } from './products/products.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -33,6 +36,8 @@ export function tokenGetter() {
     AccountComponent,
     AdminComponent,
     NotFoundComponent,
+    NewProductComponent,
+    ProductsComponent,
   ],
   imports: [
     RoutingModule,
@@ -49,6 +54,7 @@ export function tokenGetter() {
     AuthGuardLogin,
     AuthGuardAdmin,
     CatService,
+    ProductService,
     UserService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

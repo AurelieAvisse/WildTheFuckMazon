@@ -58,7 +58,9 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.userService.register(this.registerForm.value).subscribe(
+    const user = this.registerForm.value;
+    user.money = 0;
+    this.userService.register(user).subscribe(
       (res) => {
         this.toast.setMessage('you successfully registered!', 'success');
         this.router.navigate(['/login']);

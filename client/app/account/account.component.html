@@ -38,5 +38,11 @@
         <i class="fa fa-save"></i> Save
       </button>
     </form>
+    <div *ngIf="!this.auth.isAdmin">
+        <button class="btn btn-sm btn-info" (click)="addMoney()"><i class="fa fa-university"></i>Add Coins</button> 
+        <p>{{user.money}} WTF</p>
+      </div>
   </div>
 </div>
+
+
